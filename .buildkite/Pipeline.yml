@@ -9,5 +9,6 @@ steps:
           key: "v1-cache-{{ runner.os }}-{{ checksum 'test.lock' }}"
           s3:
             bucket: "k8s-conduit-cache"
+            args: "--endpoint-url=https://s3.fr-par.scw.cloud"
           paths:
             - 'test.lock'
