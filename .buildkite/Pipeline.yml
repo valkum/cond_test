@@ -2,6 +2,7 @@ steps:
   - label: "test, test, test"
     commands:
       - "echo $AWS_DEFAULT_REGION"
+      - sleep 10
     plugins:
       - gencer/cache#v2.3.7:
           backend: s3
