@@ -1,0 +1,12 @@
+steps:
+  - label: "test, test, test"
+    commands:
+      - "echo $AWS_DEFAULT_REGION"
+    plugins:
+      - gencer/cache#v2.3.7:
+          backend: s3
+          key: "v1-cache-{{ runner.os }}-{{ checksum 'test.lock' }}"
+          s3:
+            bucket: "k8s-conduit-cache"
+          paths:
+            - 'test.lock'
