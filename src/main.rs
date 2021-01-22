@@ -1,12 +1,12 @@
-use anyhow::Result;
+use anyhow::Result as AnyResult;
+use mini_redis::{client, Result};
 
-fn main() {
-    match hello_world() {
-        Ok(s) => println!("{}", s),
-        Err(s) => {dbg!(s);}
-    }
+#[tokio::main]
+pub async fn main() -> Result<()> {
+    println!("{}", hello_world()?);
+    Ok(())
 }
 
-fn hello_world() -> Result<String> {
+fn hello_world() -> AnyResult<String> {
     Ok("Hello, world!".to_string())
 }
