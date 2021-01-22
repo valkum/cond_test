@@ -7,7 +7,7 @@ ARG AWS_SECRET_ACCESS_KEY
 ARG SCCACHE_BUCKET
 ARG SCCACHE_ENDPOINT
 ARG SCCACHE_S3_USE_SSL
-ENV CARGO_HOME=/workdir/.cargo
+ENV CARGO_HOME=/workdir/.cargo_cachable_registry
 
 COPY . .
 RUN cargo build --release
