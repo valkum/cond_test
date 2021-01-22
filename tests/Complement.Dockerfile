@@ -17,7 +17,7 @@ WORKDIR /workdir
 RUN curl -OL "https://github.com/caddyserver/caddy/releases/download/v2.2.1/caddy_2.2.1_linux_amd64.tar.gz"
 RUN tar xzf caddy_2.2.1_linux_amd64.tar.gz
 
-COPY --from=builder /workdir/target/release/conduit /workdir/conduit
+COPY --from=builder /workdir/target/release/cond_test /workdir/conduit
 
 COPY Rocket-example.toml Rocket.toml
 
