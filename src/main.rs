@@ -1,5 +1,5 @@
 use anyhow::Result as AnyResult;
-use mini_redis::{client, Result};
+use mini_redis::{Result};
 
 #[tokio::main]
 pub async fn main() -> Result<()> {
